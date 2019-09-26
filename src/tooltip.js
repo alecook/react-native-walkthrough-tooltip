@@ -225,7 +225,9 @@ class Tooltip extends Component {
     if (!this.state.readyToComputeGeom) {
       this.setState({
         waitingToComputeGeom: true,
-        contentSize
+        contentSize:contentSize
+      },() => {
+        this._updateGeometry();
       });
     } else {
       this.setState({ contentSize }, () => {
